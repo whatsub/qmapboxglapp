@@ -236,7 +236,7 @@ ApplicationWindow {
             zoomLevel: 16
             minimumZoomLevel: 0
             maximumZoomLevel: 20
-            tilt: 45
+            tilt: tiltSlider.value
 
             MapParameter {
                 type: "bogus"
@@ -535,6 +535,26 @@ ApplicationWindow {
                 line.width: 2
                 opacity: (index == 0) ? 1.0 : 0.3
             }
+        }
+    }
+
+    Slider {
+        id: tiltSlider
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.margins: 12
+        orientation: Qt.Vertical
+        from: map.minimumTilt
+        to: map.maximumTilt
+        value: 45
+        handle: Rectangle {
+            x: tiltSlider.leftPadding + tiltSlider.availableWidth / 2 - height / 2
+            y: tiltSlider.topPadding + tiltSlider.visualPosition * (tiltSlider.availableHeight - height)
+            implicitWidth: 28
+            implicitHeight: implicitWidth
+            radius: implicitWidth / 2
+            color: tiltSlider.pressed ? "#17a81a" : "#41cd52"
+            border.color: "#cecfd5"
         }
     }
 
