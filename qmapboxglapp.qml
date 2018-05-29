@@ -232,7 +232,7 @@ ApplicationWindow {
                 }
             }
 
-            center: QtPositioning.coordinate(60.170448, 24.942046) // Helsinki
+            center: QtPositioning.coordinate(35.684341, 139.760292) // Tokyo
             zoomLevel: 16
             minimumZoomLevel: 0
             maximumZoomLevel: 20
